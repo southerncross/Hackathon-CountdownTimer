@@ -2,15 +2,31 @@ const daysEl = document.getElementById('days');
 const hoursEl = document.getElementById('hours');
 const minsEl = document.getElementById('minutes');
 const secsEl = document.getElementById('seconds');
+const titleEl = document.getElementById('title');
+const emojiEl = document.getElementById('emoji');
 
-const newBeginnings = '31 Oct 2021';
+const hackathonStartDate = new Date('2022-10-20 14:00:00');
+const hackathonEndDate = new Date('2022-10-21 12:00:00');
 
 function countdown() {
-    const newDate = new Date(newBeginnings);
+    let newDate = null;
     const currentDate = new Date();
+    if (currentDate <= hackathonStartDate) {
+        newDate = hackathonStartDate;
+        titleEl.innerHTML = 'Until Hackathon Launch';
+        emojiEl.innerHTML = '🚀';
+    } else if (currentDate <= hackathonEndDate) {
+        newDate = hackathonEndDate;
+        titleEl.innerHTML = 'Until Finish';
+        emojiEl.innerHTML = '⏰';
+    } else {
+        titleEl.innerHTML = 'See you 2023!';
+        emojiEl.innerHTML = '🎊';
+        return;
+    }
 
     const totalSeconds = (newDate - currentDate) / 1000;
-    
+
     const days = Math.floor(totalSeconds / 3600 / 24);
     const hours = Math.floor(totalSeconds / 3600) % 24;
     const minutes = Math.floor(totalSeconds / 60) % 60;
