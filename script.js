@@ -5,8 +5,8 @@ const secsEl = document.getElementById('seconds');
 const titleEl = document.getElementById('title');
 const emojiEl = document.getElementById('emoji');
 
-const hackathonStartDate = new Date('2022-10-20 14:00:00');
-const hackathonEndDate = new Date('2022-10-21 12:00:00');
+const hackathonStartDate = new Date(2022, 9, 20, 14);
+const hackathonEndDate = new Date(2022, 9, 21, 12);
 
 function countdown() {
     let newDate = null;
