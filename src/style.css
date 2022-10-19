@@ -70,7 +70,7 @@ h1 {
     margin-left: 0.5rem;
 }
 
-canvas {
+.background {
     width: 100vw;
     height: 100vh;
     display: block;
@@ -145,4 +145,14 @@ canvas {
       transparent 1px,
       transparent 2px
     );
+}
+
+.dice-desk {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
 }
