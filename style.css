@@ -103,12 +103,19 @@ canvas {
     display: none;
 }
 
+.logo {
+    width: 300px;
+    height: 300px;
+    margin: -80px;
+}
+
 #days, #hours, #minutes, #seconds {
     min-width: 180px;
 }
 
 .slogan {
     position: relative;
+    padding: 10px;
     font-family: Consolas, 'Courier New', monospace;
     text-shadow: 0 0 5px #C8C8C8;
 }
