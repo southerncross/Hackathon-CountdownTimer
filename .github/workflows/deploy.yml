@@ -2,9 +2,9 @@ name: Deploy Tencent COS
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
 
   workflow_dispatch:
 
@@ -16,17 +16,6 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v2
 
-      - name: Setup node enviroment
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build static site
-        run: npm run build
-
       - name: Upload to TecentCloud COS
         uses: TencentCloud/cos-action@v1
         with:
@@ -34,6 +23,6 @@ jobs:
           secret_key: ${{ secrets.TENCENT_CLOUD_SECRET_KEY }}
           cos_bucket: ${{ secrets.COS_BUCKET }}
           cos_region: ${{ secrets.COS_REGION }}
-          local_path: docs/.vuepress/dist
+          local_path: src
           remote_path: /
           clean: true
