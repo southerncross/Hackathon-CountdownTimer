@@ -99,6 +99,43 @@ canvas {
     100% { transform: rotate( 0.0deg) }
 }
 
+.hidden {
+    display: none;
+}
+
 #days, #hours, #minutes, #seconds {
     min-width: 180px;
+}
+
+.slogan {
+    position: relative;
+    font-family: Consolas, 'Courier New', monospace;
+    text-shadow: 0 0 5px #C8C8C8;
+}
+
+.await {
+    color: #70efe5;
+}
+
+.workingExp {
+    color: #6ffe4c;
+    text-decoration: wavy underline #d9584f;
+    text-underline-offset: 0.2em;
+    text-decoration-skip-ink: none;
+}
+
+.slogan::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+      0,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    );
 }

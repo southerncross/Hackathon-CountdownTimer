@@ -2,7 +2,6 @@ const daysEl = document.getElementById('days');
 const hoursEl = document.getElementById('hours');
 const minsEl = document.getElementById('minutes');
 const secsEl = document.getElementById('seconds');
-const titleEl = document.getElementById('title');
 const emojiEl = document.getElementById('emoji');
 
 const hackathonStartDate = new Date(2022, 9, 20, 14);
@@ -13,14 +12,11 @@ function countdown() {
     const currentDate = new Date();
     if (currentDate <= hackathonStartDate) {
         newDate = hackathonStartDate;
-        titleEl.innerHTML = 'Until Hackathon Launch';
         emojiEl.innerHTML = '🚀';
     } else if (currentDate <= hackathonEndDate) {
         newDate = hackathonEndDate;
-        titleEl.innerHTML = 'Until Finish';
         emojiEl.innerHTML = '⏰';
     } else {
-        titleEl.innerHTML = 'See you 2023!';
         emojiEl.innerHTML = '🎊';
         return;
     }
