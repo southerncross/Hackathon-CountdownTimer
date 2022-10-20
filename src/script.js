@@ -17,7 +17,7 @@ function countdown() {
         newDate = hackathonStartDate;
     } else if (currentDate <= hackathonEndDate) {
         const index = 21 - parseInt((hackathonEndDate - currentDate) / 1000 / 3600);
-        workingExp.style.textDecorationColor = lintColors[21];
+        workingExp.style.textDecorationColor = lintColors[index];
         newDate = hackathonEndDate;
     } else {
         workingExp.style.textDecorationColor = endColor;
